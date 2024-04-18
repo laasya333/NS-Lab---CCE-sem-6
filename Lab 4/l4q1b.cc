@@ -89,8 +89,8 @@ main (int argc, char *argv[])
   // Create an optional packet sink to receive these packets
   PacketSinkHelper sink ("ns3::UdpSocketFactory",
                          Address (InetSocketAddress (Ipv4Address::GetAny (), port)));
-  app = sink.Install (c0.Get (0));
-  app.Add (sink.Install (c1.Get (1)));
+  app = sink.Install (c0.Get (0)); // Install on node 0 to capture the broadcast
+  app.Add (sink.Install (c1.Get (1))); // Install on node 1 in the LAN to capture the broadcast
   app.Start (Seconds (1.0));
   app.Stop (Seconds (10.0));
 

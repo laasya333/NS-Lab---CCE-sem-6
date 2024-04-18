@@ -1,3 +1,6 @@
+///./waf --run "scratch/lab9.cc --protocol=1"
+///In this example, --protocol=1 specifies that you want to use the OLSR protocol. You can replace 1 with 2 for AODV, 3 for DSDV, or 4 for DSR.
+
 #include <fstream>
 #include <iostream>
 #include "ns3/core-module.h"
@@ -437,4 +440,7 @@ RoutingExperiment::Run (int nSinks, double txp, std::string CSVfileName)
 
   Simulator::Destroy ();
 }
+
+
+
  

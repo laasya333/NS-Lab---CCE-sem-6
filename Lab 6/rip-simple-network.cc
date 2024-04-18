@@ -227,6 +227,13 @@
    csma.EnablePcapAll ("rip-simple-routing", true);
  
    Simulator::Schedule (Seconds (40), &TearDownLink, b, d, 3, 2);
+
+/*Here's what each part of this line does:
+
+Simulator::Schedule: This function schedules a method to be called after a specified time.
+(Seconds (40): It specifies the time at which the method should be called, in this case, 40 seconds after the simulation starts.
+&TearDownLink: This is the method that will be called when the scheduled time is reached. It's the TearDownLink function defined earlier in the code.
+b, d, 3, 2: These are the arguments passed to the TearDownLink function, indicating that the link between nodes B and D will be torn down. The TearDownLink function takes four arguments: nodeA, nodeB, interfaceA, and interfaceB.*/
  
    /* Now, do the actual simulation. */
    NS_LOG_INFO ("Run Simulation.");
